@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #d9d9d9;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+.calculator {
+  background: #000;
+  width: 300px;            
+  padding: 18px;          
+  border-radius: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+  position: relative;
+}
+
+#display {
+  width: 100%;
+  height: 70px;           
+  border: none;
+
+  background: #3a3a3a;
+  color: white;
+
+  font-size: 2.2rem;      
+  text-align: right;
+  padding: 15px;
+
+  margin-bottom: 12px;
+
+  border-radius: 15px;
+  outline: none;
+}
+
+
+.mode-btn {
+  width: auto;
+  padding: 6px 12px;
+  margin-bottom: 12px;
+
+  background: #333;
+  color: white;
+  font-size: 0.8rem;
+
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+
+  display: block;
+  margin-right: auto;
+}
+
+.mode-btn:hover {
+  background: #444;
+}
+
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+
+button {
+  width: 55px;            
+  height: 55px;           
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;     
+
+  cursor: pointer;
+  background: #333;
+  color: white;
+
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+
+.clear {
+  background: #a5a5a5;
+  color: black;
+}
+
+.equal {
+  background: #ff9f0a;
+  width: 120px;
+  border-radius: 30px;
+  grid-column: span 2;
+}
+
+
+.scientific-wrapper {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s ease;
+}
+
+.scientific-wrapper.active {
+  max-height: 160px;  
+}
+
+
+.scientific-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+
+  pointer-events: none;
+}
+
+.scientific-buttons.active {
+  max-height: 140px;
+  opacity: 1;
+  transform: translateY(0);
+
+  margin-bottom: 8px;
+  pointer-events: auto;
+}
